@@ -1,38 +1,684 @@
-.App {
-  text-align: center;
+/* Apply border-box sizing to every element. */
+* {
+  /* Include padding and borders inside an element's width and height. */
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* Style the entire page body. */
+body {
+
+  /* Remove the browser's default margin. */
+  margin: 0;
+
+  /* Set the main font of the application. */
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* Set the dark background color. */
+  background: #0b0f14;
+
+  /* Set the default text color. */
+  color: #f4f7fa;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* Main application container. */
+.campus-flow {
+
+  /* Set the maximum width while allowing the container to shrink. */
+  width: min(1050px, 92%);
+
+  /* Center the application horizontally. */
+  margin: 0 auto;
+
+  /* Add space around the main content. */
+  padding: 55px 0 35px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/* ================= HERO ================= */
+
+/* Style the top hero section. */
+.hero {
+
+  /* Place the title and counter next to each other. */
   display: flex;
-  flex-direction: column;
+
+  /* Push the two sections apart. */
+  justify-content: space-between;
+
+  /* Align their bottom edges. */
+  align-items: flex-end;
+
+  /* Add space if the layout becomes smaller. */
+  gap: 30px;
+
+  /* Add space below the hero. */
+  padding-bottom: 45px;
+}
+
+
+/* Small uppercase labels. */
+.eyebrow {
+
+  /* Remove default paragraph margin. */
+  margin: 0 0 12px;
+
+  /* Make the text small. */
+  font-size: 11px;
+
+  /* Increase letter spacing. */
+  letter-spacing: 3px;
+
+  /* Use a muted gray color. */
+  color: #7f8b99;
+
+  /* Make the text bold. */
+  font-weight: bold;
+}
+
+
+/* Main CampusFlow heading. */
+.hero h1 {
+
+  /* Remove the default heading margin. */
+  margin: 0;
+
+  /* Make the heading responsive. */
+  font-size: clamp(45px, 8vw, 82px);
+
+  /* Reduce spacing between letters. */
+  letter-spacing: -4px;
+
+  /* Reduce the line height. */
+  line-height: 0.9;
+}
+
+
+/* Style only the "Flow" part of the title. */
+.hero h1 span {
+
+  /* Give Flow the green accent color. */
+  color: #64e6a7;
+}
+
+
+/* Description below the title. */
+.intro {
+
+  /* Prevent the paragraph from becoming too wide. */
+  max-width: 500px;
+
+  /* Add space above the paragraph. */
+  margin-top: 25px;
+
+  /* Use a muted text color. */
+  color: #8d98a5;
+
+  /* Improve readability. */
+  line-height: 1.6;
+
+  /* Set paragraph size. */
+  font-size: 15px;
+}
+
+
+/* Task counter box. */
+.task-counter {
+
+  /* Prevent the box from becoming too narrow. */
+  min-width: 145px;
+
+  /* Add internal spacing. */
+  padding: 22px;
+
+  /* Add a subtle border. */
+  border: 1px solid #202832;
+
+  /* Give the box a slightly lighter background. */
+  background: #11171e;
+
+  /* Round the corners. */
+  border-radius: 14px;
+}
+
+
+/* Large task count number. */
+.task-counter strong {
+
+  /* Put the number on its own line. */
+  display: block;
+
+  /* Make the number large. */
+  font-size: 42px;
+
+  /* Use the application's green accent. */
+  color: #64e6a7;
+}
+
+
+/* "ACTIVE TASKS" label. */
+.task-counter span {
+
+  /* Use muted text. */
+  color: #6e7985;
+
+  /* Make the text small. */
+  font-size: 10px;
+
+  /* Increase letter spacing. */
+  letter-spacing: 2px;
+}
+
+
+/* ================= COMPOSER ================= */
+
+/* New-task creation box. */
+.composer {
+
+  /* Give the box a slightly lighter background. */
+  background: #11171e;
+
+  /* Add a border around the box. */
+  border: 1px solid #202832;
+
+  /* Round the corners. */
+  border-radius: 18px;
+
+  /* Add internal spacing. */
+  padding: 25px;
+
+  /* Add space below the composer. */
+  margin-bottom: 55px;
+}
+
+
+/* Header inside the composer. */
+.composer-heading {
+
+  /* Place the plus icon and text next to each other. */
+  display: flex;
+
+  /* Vertically center them. */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  /* Add space between them. */
+  gap: 15px;
+
+  /* Add space below the heading. */
+  margin-bottom: 22px;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* Plus icon box. */
+.composer-heading > span {
+
+  /* Set the icon box width. */
+  width: 38px;
+
+  /* Set the icon box height. */
+  height: 38px;
+
+  /* Center the plus symbol. */
+  display: grid;
+
+  /* Center horizontally and vertically. */
+  place-items: center;
+
+  /* Round the corners. */
+  border-radius: 10px;
+
+  /* Use the green accent color. */
+  background: #64e6a7;
+
+  /* Use dark text for contrast. */
+  color: #08100c;
+
+  /* Set the plus symbol size. */
+  font-size: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* Composer heading. */
+.composer h2 {
+
+  /* Remove default margin. */
+  margin: 0 0 4px;
+
+  /* Set heading size. */
+  font-size: 17px;
+}
+
+
+/* Composer description. */
+.composer p {
+
+  /* Remove default paragraph margin. */
+  margin: 0;
+
+  /* Use muted gray text. */
+  color: #707b87;
+
+  /* Set small text size. */
+  font-size: 12px;
+}
+
+
+/* Task input form. */
+.task-form {
+
+  /* Use CSS Grid for the form. */
+  display: grid;
+
+  /* Give the input more space than the other elements. */
+  grid-template-columns: 1fr 170px 130px;
+
+  /* Add space between form elements. */
+  gap: 10px;
+}
+
+
+/* Style both the input and dropdown. */
+.task-form input,
+.task-form select {
+
+  /* Add a border. */
+  border: 1px solid #29323c;
+
+  /* Match the dark application background. */
+  background: #0b0f14;
+
+  /* Use light text. */
+  color: #e9edf0;
+
+  /* Add internal spacing. */
+  padding: 14px;
+
+  /* Round the corners. */
+  border-radius: 9px;
+
+  /* Remove the browser's default focus outline. */
+  outline: none;
+}
+
+
+/* Change the border when the user focuses on a field. */
+.task-form input:focus,
+.task-form select:focus {
+
+  /* Highlight the field using the green accent. */
+  border-color: #64e6a7;
+}
+
+
+/* Add-task button. */
+.task-form button {
+
+  /* Remove the default button border. */
+  border: none;
+
+  /* Round the button corners. */
+  border-radius: 9px;
+
+  /* Use the green accent. */
+  background: #64e6a7;
+
+  /* Use dark text. */
+  color: #08100c;
+
+  /* Make the button text bold. */
+  font-weight: bold;
+
+  /* Show a pointer when hovering. */
+  cursor: pointer;
+
+  /* Animate changes smoothly. */
+  transition: 0.2s;
+}
+
+
+/* Button hover effect. */
+.task-form button:hover {
+
+  /* Move the button slightly upward. */
+  transform: translateY(-2px);
+}
+
+
+/* ================= BOARD ================= */
+
+/* Header above the task cards. */
+.board-header {
+
+  /* Put the title and LIVE indicator on one row. */
+  display: flex;
+
+  /* Push them to opposite sides. */
+  justify-content: space-between;
+
+  /* Align them vertically. */
+  align-items: flex-end;
+
+  /* Add space below the heading. */
+  margin-bottom: 18px;
+}
+
+
+/* Today's Missions heading. */
+.board-header h2 {
+
+  /* Remove default margin. */
+  margin: 0;
+
+  /* Set the heading size. */
+  font-size: 28px;
+}
+
+
+/* LIVE status text. */
+.live-indicator {
+
+  /* Make the text small. */
+  font-size: 10px;
+
+  /* Increase letter spacing. */
+  letter-spacing: 2px;
+
+  /* Use muted gray. */
+  color: #78838e;
+}
+
+
+/* Small circle next to LIVE. */
+.live-indicator i {
+
+  /* Make it inline so it stays beside LIVE. */
+  display: inline-block;
+
+  /* Set the circle width. */
+  width: 7px;
+
+  /* Set the circle height. */
+  height: 7px;
+
+  /* Make it circular. */
+  border-radius: 50%;
+
+  /* Use the green accent. */
+  background: #64e6a7;
+
+  /* Add space between the circle and LIVE. */
+  margin-right: 7px;
+}
+
+
+/* ================= TASK CARDS ================= */
+
+/* Container holding all task cards. */
+.task-list {
+
+  /* Use CSS Grid. */
+  display: grid;
+
+  /* Add a small gap between cards. */
+  gap: 10px;
+}
+
+
+/* Individual task card. */
+.task-card {
+
+  /* Place the task information horizontally. */
+  display: flex;
+
+  /* Vertically center everything. */
+  align-items: center;
+
+  /* Add space between elements. */
+  gap: 20px;
+
+  /* Add internal spacing. */
+  padding: 22px;
+
+  /* Add a border. */
+  border: 1px solid #202832;
+
+  /* Round the corners. */
+  border-radius: 13px;
+
+  /* Set the card background. */
+  background: #10161c;
+
+  /* Animate hover effects. */
+  transition: 0.2s;
+}
+
+
+/* Hover effect for a task card. */
+.task-card:hover {
+
+  /* Make the border slightly brighter. */
+  border-color: #3b4854;
+
+  /* Move the card slightly to the right. */
+  transform: translateX(4px);
+}
+
+
+/* Task number styling. */
+.task-number {
+
+  /* Use muted gray. */
+  color: #596571;
+
+  /* Use a monospace font. */
+  font-family: monospace;
+
+  /* Set the number size. */
+  font-size: 14px;
+
+  /* Reserve space for the number. */
+  min-width: 30px;
+}
+
+
+/* Main task information container. */
+.task-content {
+
+  /* Allow the content to use remaining space. */
+  flex: 1;
+}
+
+
+/* Task title. */
+.task-content h3 {
+
+  /* Remove default margin and add a little space below. */
+  margin: 0 0 9px;
+
+  /* Set title size. */
+  font-size: 16px;
+
+  /* Use a medium font weight. */
+  font-weight: 500;
+}
+
+
+/* Category badge. */
+.task-category {
+
+  /* Allow padding and dimensions to work correctly. */
+  display: inline-block;
+
+  /* Add internal spacing. */
+  padding: 5px 9px;
+
+  /* Round the badge corners. */
+  border-radius: 5px;
+
+  /* Use a dark green background. */
+  background: #19221f;
+
+  /* Use the green accent for text. */
+  color: #64e6a7;
+
+  /* Make the text small. */
+  font-size: 10px;
+
+  /* Convert category text to uppercase. */
+  text-transform: uppercase;
+
+  /* Increase letter spacing. */
+  letter-spacing: 1px;
+}
+
+
+/* Active status text. */
+.task-status {
+
+  /* Use muted gray. */
+  color: #67727d;
+
+  /* Make the status small. */
+  font-size: 10px;
+
+  /* Convert text to uppercase. */
+  text-transform: uppercase;
+
+  /* Increase letter spacing. */
+  letter-spacing: 1px;
+}
+
+
+/* Small status circle. */
+.task-status span {
+
+  /* Keep the circle beside the text. */
+  display: inline-block;
+
+  /* Set circle width. */
+  width: 6px;
+
+  /* Set circle height. */
+  height: 6px;
+
+  /* Make it circular. */
+  background: #64e6a7;
+
+  /* Make the shape a circle. */
+  border-radius: 50%;
+
+  /* Add space between circle and text. */
+  margin-right: 7px;
+}
+
+
+/* ================= FOOTER ================= */
+
+/* Footer styling. */
+footer {
+
+  /* Center the footer text. */
+  text-align: center;
+
+  /* Use muted gray. */
+  color: #4f5963;
+
+  /* Make the footer small. */
+  font-size: 11px;
+
+  /* Add space above the footer. */
+  margin-top: 55px;
+}
+
+
+/* ================= MOBILE ================= */
+
+/* Apply these styles when the screen is 700px or smaller. */
+@media (max-width: 700px) {
+
+  /* Stack the hero sections vertically. */
+  .hero {
+
+    /* Change from row to column. */
+    align-items: flex-start;
+
+    /* Stack elements vertically. */
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+
+  /* Make the counter use the full available width. */
+  .task-counter {
+
+    /* Use all available width. */
+    width: 100%;
   }
+
+
+  /* Stack form elements on small screens. */
+  .task-form {
+
+    /* Use one column instead of three. */
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Add padding to the button on mobile. */
+  .task-form button {
+
+    /* Make the button easier to tap. */
+    padding: 14px;
+  }
+
+
+  /* Hide the status text on small screens. */
+  .task-status {
+
+    /* Remove it from the layout. */
+    display: none;
+  }
+
+}
+
+/* Complete button used to remove a finished task. */
+.complete-button {
+
+  /* Remove the browser's default button border. */
+  border: 1px solid #29352f;
+
+  /* Use a dark background. */
+  background: #111914;
+
+  /* Use the green accent color for the text. */
+  color: #64e6a7;
+
+  /* Add spacing inside the button. */
+  padding: 9px 13px;
+
+  /* Round the button corners. */
+  border-radius: 7px;
+
+  /* Show a pointer when hovering. */
+  cursor: pointer;
+
+  /* Set the font size. */
+  font-size: 11px;
+
+  /* Animate the hover effect. */
+  transition: 0.2s;
+}
+
+
+/* Change the button when the mouse is over it. */
+.complete-button:hover {
+
+  /* Give the button a green background. */
+  background: #64e6a7;
+
+  /* Change the text to dark. */
+  color: #08100c;
+
+  /* Slightly raise the button. */
+  transform: translateY(-2px);
 }
